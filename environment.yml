@@ -1,0 +1,13 @@
+name: battery_model
+channels:
+    - defaults
+    - conda-forge
+dependencies:
+    - python=3.7
+    - matplotlib
+    - numpy
+    - pandas
+    - jupyterlab
+    - seaborn
+    - nb_conda_kernels
+    - altair
