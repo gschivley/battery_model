@@ -22,3 +22,28 @@ def read_filter_lbmp(path):
     df = df.loc[df.Name == 'N.Y.C.', ['Time Stamp', 'Name', 'LBMP ($/MWHr)']]
     df.columns = ['time_stamp', 'name', 'lbmp']
     return df
+
+def read_all_nyc(data_path):
+    """
+    Reads and combines individual LBMP data files.
+    
+    Parameters
+    ----------
+    data_path : Path object
+        This is a pathlib Path object pointing to the LBMP data folder with
+        .csv files.
+    
+    Returns
+    -------
+    DataFrame
+        df with 4 columns (time stamp, name of node, LBMP, hour of year)
+    """
+
+    fnames = data_path.glob('**/*.csv')
+    dfs = [read_filter_lbmp(name) for name in fnames]
+    df = pd.concat(dfs)
+    df.sort_values('time_stamp', inplace=True)
+    df.reset_index(inplace=True, drop=True)
+    df['hour'] = df.index
+
+    return df
