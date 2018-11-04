@@ -12,3 +12,4 @@ dependencies:
     - nb_conda_kernels
     - altair
     - pyomo
+    - glpk
