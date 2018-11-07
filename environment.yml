@@ -13,3 +13,4 @@ dependencies:
     - altair
     - pyomo
     - glpk
+    - vega
