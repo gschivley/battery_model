@@ -1,0 +1,8 @@
+numpy
+pandas
+jupyterlab
+nb_conda_kernels
+altair
+pyomo
+glpk
+vega

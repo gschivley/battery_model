@@ -4,11 +4,9 @@ channels:
     - conda-forge
 dependencies:
     - python=3
-    - matplotlib
     - numpy
     - pandas
     - jupyterlab
-    - seaborn
     - nb_conda_kernels
     - altair
     - pyomo
